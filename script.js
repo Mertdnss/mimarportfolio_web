@@ -60,14 +60,26 @@ window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
     const navLinks = document.querySelectorAll('.nav-link');
     const navLogo = document.querySelector('.nav-logo');
+    const navMenu = document.querySelector('.nav-menu');
+    const isMobile = window.innerWidth <= 768;
     
     if (window.scrollY > 100) {
         navbar.style.background = 'rgba(255, 255, 255, 0.98)';
         navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
         navbar.style.borderBottom = '1px solid rgba(0, 0, 0, 0.1)';
+        
+        // Mobil menü için özel ayarlar
+        if (isMobile && navMenu) {
+            navMenu.style.background = 'rgba(255, 255, 255, 0.95)';
+        }
+        
         // Menü linklerini koyu yap
         navLinks.forEach(link => {
-            link.style.color = '#2c3e50';
+            if (isMobile) {
+                link.style.color = '#2c3e50';
+            } else {
+                link.style.color = '#2c3e50';
+            }
         });
         // Logo rengini koyu yap
         if (navLogo) {
@@ -79,6 +91,12 @@ window.addEventListener('scroll', () => {
         navbar.style.background = 'rgba(0, 0, 0, 0.1)';
         navbar.style.boxShadow = 'none';
         navbar.style.borderBottom = '1px solid rgba(255, 255, 255, 0.1)';
+        
+        // Mobil menü için özel ayarlar
+        if (isMobile && navMenu) {
+            navMenu.style.background = 'rgba(0, 0, 0, 0.95)';
+        }
+        
         // Menü linklerini açık renge döndür
         navLinks.forEach(link => {
             link.style.color = 'rgba(255, 255, 255, 0.9)';

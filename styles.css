@@ -908,14 +908,14 @@ section {
         left: -100%;
         top: 70px;
         flex-direction: column;
-        background: rgba(255, 255, 255, 0.95);
+        background: rgba(0, 0, 0, 0.95);
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
         border: 1px solid rgba(255, 255, 255, 0.2);
         width: 100%;
         text-align: center;
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
         padding: 2rem 0;
         border-radius: 0 0 20px 20px;
     }
@@ -929,15 +929,17 @@ section {
     }
 
     .nav-link {
-        color: #333;
+        color: rgba(255, 255, 255, 0.9);
         margin: 0.5rem 0;
         padding: 1rem 2rem;
         border-radius: 15px;
     }
 
     .nav-link:hover {
-        background: rgba(102, 126, 234, 0.1);
-        color: #667eea;
+        background: rgba(102, 126, 234, 0.3);
+        color: #fff;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 20px rgba(102, 126, 234, 0.3);
     }
 
     .nav-toggle.active .bar:nth-child(2) {
